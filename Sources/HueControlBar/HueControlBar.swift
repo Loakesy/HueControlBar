@@ -1,4 +1,6 @@
 import UIKit
+import HueColors
+
 
 public protocol HueControlBarDelegate: AnyObject {
     func hueControlBarDidSelectOff(_ bar: HueControlBar)

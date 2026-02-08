@@ -8,10 +8,18 @@ let package = Package(
         .library(name: "HueControlBar", targets: ["HueControlBar"]),
     ],
     dependencies: [
-        .package(url: "https://your-host/HueColorCore.git", from: "1.0.0")
+        .package(url: "https://github.com/Loakesy/HueColors", from: "1.0.0")
     ],
     targets: [
-        .target(name: "HueControlBar", dependencies: []),
-        .testTarget(name: "HueControlBarTests", dependencies: ["HueControlBar"]),
+        .target(
+            name: "HueControlBar",
+            dependencies: [
+                .product(name: "HueColors", package: "HueColors")
+            ]
+        ),
+        .testTarget(
+            name: "HueControlBarTests",
+            dependencies: ["HueControlBar"]
+        ),
     ]
 )
